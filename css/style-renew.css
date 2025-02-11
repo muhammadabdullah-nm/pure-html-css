@@ -1,0 +1,997 @@
+/* font-families */
+@font-face {
+    font-family: raleway;
+    src: url(../fonts/Raleway/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+
+* {
+    font-family: raleway;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: poppins;
+}
+
+/* whole page margin*/
+body {
+    margin: 0;
+}
+
+.bkgnd-img {
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+
+.heading-center {
+    text-align: center;
+    color: black;
+    font-size: 35px;
+}
+
+.container1 {
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    margin: auto;
+}
+
+
+/* header */
+.topbar {
+    width: 100%;
+    float: left;
+}
+
+.topbar .logo {
+    width: 200px;
+    float: left;
+}
+
+.topbar .logo img {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.topbar .topbarMenu {
+    width: 900px;
+    float: left;
+    text-align: right;
+    padding-top: 15px;
+}
+
+.topbar .topbarMenu ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+}
+
+.topbar .topbarMenu ul li {
+    display: inline-block;
+    padding: 9px 12px;
+}
+
+.topbar .topbarMenu ul li a {
+    color: black;
+}
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: black;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+
+/* digital marketing info */
+.dm-s {
+    width: 100%;
+    float: left;
+    background-image: url(../images/header-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.dm-s .dm-s-info {
+    width: 530px;
+    padding: 40px 0px;
+}
+
+.dm-s .dm-s-info h2,
+p {
+    color: white;
+}
+
+.dm-s .dm-s-info h2 {
+    padding-top: 70px;
+    font-size: 3vw;
+    margin: 15px 0px;
+}
+
+.dm-s .dm-s-info p {
+    line-height: 28px;
+}
+
+.dm-s .dm-s-info button,
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#readmore-btn:hover {
+    background-color: #ccc;
+}
+
+#contactus-btn:hover {
+    background-color: rgb(233, 140, 233);
+}
+
+#readmore-btn {
+    background-color: transparent;
+    border: 4px solid yellow;
+    padding: 13px 33px;
+}
+
+#contactus-btn {
+    background-color: purple;
+    padding: 17px 33px;
+    border: 0;
+    margin-left: 26px;
+}
+
+/* about us  */
+.abtus-s {
+    width: 100%;
+    float: left;
+    margin: 10px 0px;
+}
+
+.section50 h1 {
+    font-size: 30px;
+}
+
+.section50 img {
+    width: 100%;
+    object-fit: contain;
+    float: left;
+    padding: 80px 0px;
+}
+
+.section50 p {
+    color: black;
+}
+
+.abtus-s-info {
+    padding: 52px 0px;
+    text-align: justify;
+    padding-right: 78px;
+    line-height: 26px;
+}
+
+/* our services  */
+.services-s {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    background-image: url(../images/services_bg_img2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.services-s-info h2 {
+    color: white;
+    padding: 20px 0px;
+}
+
+.os {
+    width: 100%;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.os-2 {
+    width: 100%;
+    float: left;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-top: 24px;
+    padding-bottom: 22px;
+}
+
+.section33 {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    color: white;
+}
+
+.section33-II {
+    width: 48.33%;
+    float: left;
+    text-align: center;
+    color: white;
+}
+
+.section33 p {
+    padding: 0px 30px;
+}
+
+.section33-II p {
+    padding: 0px 75px;
+}
+
+/* our packages */
+.our-pkgs-s {
+    width: 100%;
+    float: left;
+    margin: 45px 0px;
+}
+
+.our-pkgs {
+    padding: 10px 10px;
+}
+
+.startup {
+    border: 2px solid rgb(224, 219, 143);
+    background: linear-gradient(to bottom, rgb(224, 219, 143) 30%, white 70%);
+    color: black;
+    width: 85%;
+    float: left;
+    text-align: center;
+    margin: 0px 9px;
+}
+
+.startup p {
+    color: black;
+}
+
+.startup hr {
+    color: rgb(224, 219, 143);
+    margin: 2px 14px;
+}
+
+.pay p {
+    color: black;
+    font-family: fantasy;
+    font-size: 23px;
+}
+
+.pay {
+    border: 5px solid white;
+    border-radius: 50%;
+    background: radial-gradient(circle, white, rgb(224, 219, 143));
+    margin: 0px 90px;
+}
+
+.getStarted-btn button {
+    padding: 9px 23px;
+    background-color: #1d1e56;
+    color: white;
+    margin: 12px;
+}
+
+/* funfact section  */
+.funfact-s {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    background-image: url(../images/funfact-bg-img.png);
+    height: 268px;
+    padding: 0px 67px;
+}
+
+.fa-solid {
+    color: white;
+}
+
+.funfact-s-col {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px 95px;
+}
+
+.section25 {
+    width: 22%;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+/* portfolio */
+.portfolio-s {
+    width: 100%;
+    float: left;
+    padding: 50px 0px;
+    color: black;
+}
+
+.port-img img {
+    width: 33%;
+    display: inline-block;
+}
+
+.portfolio-info h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+/* footer  */
+.footer-v {
+    width: 100%;
+    float: left;
+    background: url(../images/faq-contact-bg-1.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.footer-v .form {
+    text-align: left;
+    color: white;
+}
+
+.footer-v .form .section50 {
+    width: 50%;
+    float: left;
+}
+
+.panel p {
+    color: white;
+}
+
+.form .section50 .faq h2 {
+    padding: 10px 5px;
+    float: left;
+}
+
+
+/* contact us button  */
+.form .section50 .contactus {
+    margin-top: 36px;
+    float: left;
+}
+
+.contactus ul {
+    display: inline-block;
+    margin: 0;
+}
+
+.contactus ul li {
+    width: 96%;
+    float: left;
+}
+
+.contactus input {
+    background-color: transparent;
+}
+
+.contactus-inputs {
+    width: 100%;
+    list-style: none;
+    /* padding-right: 44px; */
+    padding-left: 0px;
+}
+
+
+.contactus-inputs input {
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-bottom: 7px;
+}
+
+.contactus-inputs .last-section {
+    padding: 66px 10px;
+}
+
+.contactusButton {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 12px 26px;
+    color: white;
+    float: right;
+}
+
+.contactusButton:hover {
+    background-color: rgb(204, 204, 204);
+    color: black;
+}
+
+
+/* accordian in faqs */
+.accordion {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.section50 .faq li {
+    list-style: none;
+}
+
+.section50 .faq ul {
+    padding-left: 0px;
+    padding-right: 22px;
+}
+
+.buttons {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 16px 10px;
+    margin-bottom: 7px;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.accordion:after {
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.panel {
+    background-color: transparent;
+    color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.fa-angle-down {
+    float: right;
+    padding-left: 295px;
+}
+
+/* copyright footer  */
+.copyright-footer {
+    width: 100%;
+    float: left;
+    background-color: #1d1e56;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
+    /* overflow: auto; */
+}
+
+.caption {
+    color: white;
+    float: left;
+    margin: 0;
+    padding: 10px 12px;
+}
+
+.social-icons {
+    float: right;
+}
+
+.social-icons a {
+    color: black;
+}
+
+.fa-brands {
+    background-color: white;
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.topbarMenu ul #mobile-cross #mobile-bar {
+    display: none;
+}
+
+.fa-solid {
+    color: black;
+}
+
+/* for responsive websites  */
+@media screen and (min-width: 1025px) {
+    .container1 {
+        width: 1200px;
+        padding: 0px 15px;
+    }
+
+    .topbar .topbarMenu {
+        width: 900px;
+    }
+
+    .dm-s {
+        width: 100%;
+    }
+
+    .dm-s .dm-s-info {
+        width: 530px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+    .container1 {
+        width: auto;
+        padding: 0px 15px;
+    }
+
+    .topbar .topbarMenu {
+        width: auto;
+        font-size: 13px;
+    }
+
+    .topbar .topbarMenu ul li {
+        padding: 9px 15px;
+        margin: 0px 13px;
+    }
+
+    .mobilecross {
+        display: none;
+    }
+
+    .contactus-inputs {
+        width: 92%;
+    }
+
+    .contactusButton {
+        margin: 0px 20px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+
+    nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+
+    .container1 {
+        width: auto;
+        padding: 0px 15px;
+    }
+
+    /* .topbar .logo img {
+        width: 70%;
+        padding-top: 15px;
+    } */
+
+    .topbar .topbarMenu {
+        width: 429px;
+    }
+
+    .dm-s .dm-s-info {
+        width: 328px;
+    }
+
+    .dm-s .dm-s-info h2 {
+        font-size: 26px;
+    }
+
+    .footer-v .form .section50 {
+        width: 100%;
+    }
+
+    .section50 .faq ul {
+        padding-right: 0px;
+    }
+
+    .form .section50 .contactus {
+        margin-bottom: 30px;
+    }
+
+    .contactus ul li {
+        width: 100%;
+    }
+
+    .contactus-inputs {
+        width: 93%;
+    }
+
+    .contactusButton {
+        margin: 0px 27px;
+    }
+
+    .topbarMenu ul #mobile-cross,
+    #mobile-bar {
+        display: block;
+    }
+
+    #mobile-bar{
+        width: 5%;
+        display: inline-block;
+        padding: 25px 0px;
+        text-align: right;
+
+    }
+
+    .topbarMenu ul{
+        display: none;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 479px) {
+    .container1 {
+        width: 515px;
+    }
+
+    .topbar .topbarMenu {
+        width: 300px;
+    }
+}
+
+
+/* @media screen and (max-width: 480px) {
+
+    #topbarMenu ul #mobile-cross,
+    #mobile-bar {
+        display: block;
+    }
+
+    .uni-padding {
+        padding: 0px 32px;
+    }
+
+    .topbarImg {
+        width: 43%;
+    }
+
+    #mobile-cross {
+        text-align: right;
+    }
+
+    #topbarMenu {
+        background-color: #1d1e56;
+        height: 1050vh;
+        width: 280px;
+        position: absolute;
+        top: 0px;
+        padding: 0px;
+    }
+
+    #topbarMenu ul li {
+        display: block;
+        padding: 18px 0px;
+        padding-right: 35px;
+        border: 1px solid black;
+    }
+
+    #topbarMenu ul {
+        padding: 0px 0px;
+    }
+
+    #topbarMenu {
+        left: -280px;
+        transition: all 0.5s ease;
+    }
+
+    #mobile-bar {
+        background-color: #1d1e56;
+        color: white;
+        width: 100%;
+        float: left;
+        padding: 10px 0px;
+        margin-top: 5px;
+    }
+
+    .pay {
+        margin: 0px 100px;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .uni-padding {
+        padding: 0px 23px;
+    }
+
+    .heading-center {
+        font-size: 26px;
+    }
+
+    .topbar {
+        padding-bottom: 76px;
+    }
+
+    .topbarImg {
+        width: 27%;
+        padding-bottom: 7px;
+    }
+
+    #topbarMenu ul {
+        font-size: 8px;
+        padding: 0px 8px;
+    }
+
+    #topbarMenu {
+        margin-top: 3px;
+    }
+
+    .dm-s-info h2 {
+        padding-top: 26px;
+        font-size: 24px;
+        margin: 4px 0px;
+    }
+
+    .dm-s-info {
+        margin-top: 28px;
+    }
+
+    .dm-s-info p {
+        padding-right: 32px;
+        line-height: 172%;
+    }
+
+    #readmore-btn {
+        padding: 8px 12px;
+    }
+
+    #contactus-btn {
+        padding: 12px 12px;
+    }
+
+    .section50 h1 {
+        font-size: 28px;
+    }
+
+    .section50 {
+        width: 100%;
+    }
+
+    .abtus-s-info {
+        padding: 0px;
+        padding-right: 24px;
+    }
+
+    .section50 img {
+        width: 96%;
+        float: left;
+        padding: 52px 0px;
+    }
+
+    .services-s-info h2 {
+        padding: 9px 0px;
+    }
+
+    .section33 {
+        width: 73.33%;
+        padding-left: 65px;
+        padding-bottom: 27px;
+    }
+
+    .section33-II {
+        width: 83.33%;
+        padding-left: 45px;
+        padding-bottom: 38px;
+    }
+
+    .section33 p {
+        padding: 0px 13px;
+    }
+
+    .section33-II p {
+        padding: 0px 25px;
+    }
+
+    .our-pkgs {
+        padding-left: 51px;
+    }
+
+    .our-pkgs-s {
+        margin: 7px 0px;
+    }
+
+    .startup {
+        width: 84%;
+        margin: 18px 9px;
+    }
+
+    .pay {
+        margin: 0px 156px;
+    }
+
+    .section25 {
+        width: 40%;
+    }
+
+    .funfact-s {
+        height: 436px;
+    }
+
+    .funfact-s-col {
+        padding: 70px 1px;
+        text-align: center;
+    }
+
+    .portfolio-s {
+        padding: 15px 0px;
+    }
+
+    .port-img {
+        text-align: center;
+    }
+
+
+    .port-img-css img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section50 h2 {
+        padding: 13px 5px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .uni-padding {
+        padding: 0px 40px;
+    }
+
+    .heading-center {
+        font-size: 30px;
+    }
+
+    .topbar {
+        padding-bottom: 140px;
+    }
+
+    #topbarMenu {
+        float: left;
+        margin-top: 22px;
+    }
+
+    .topbarImg {
+        width: 22%;
+    }
+
+    #topbarMenu ul {
+        font-size: 15px;
+        padding: 0px 30px;
+    }
+
+    .dm-s-info h2 {
+        padding-top: 46px;
+        font-size: 34px;
+    }
+
+    .dm-s-info p {
+        padding-right: 240px;
+        line-height: 182%;
+    }
+
+    #readmore-btn {
+        padding: 10px 23px;
+    }
+
+    #contactus-btn {
+        padding: 14px 21px;
+    }
+
+    .section50 {
+        width: 100%;
+    }
+
+    .abtus-s-info {
+        padding: 5px 0px;
+        line-height: 155%;
+    }
+
+    .section50 h1 {
+        font-size: 35px;
+    }
+    .section50 img {
+        padding: 25px 0px;
+    }
+
+    .section33 p {
+        padding: 0px 19px;
+    }
+
+    .section33-II p {
+        padding: 0px 46px;
+    }
+
+    .our-pkgs-s {
+        margin: 6px 0px;
+    }
+
+    .startup {
+        width: 30%;
+    }
+
+    .pay {
+        margin: 0px 54px;
+    }
+
+    .section25 {
+        width: 21%;
+    }
+
+    .funfact-s-col {
+        padding: 66px 29px;
+    }
+
+    .port-img-css img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .section50 h2 {
+        padding: 13px 5px;
+    }
+}
+
+/* example */
+/* .example{
+    float: left;
+    width: 100%;
+} */
