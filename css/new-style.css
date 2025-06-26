@@ -209,11 +209,11 @@ section {
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
-    background-color: #f8f9fa; /* Light grayish background for the WHOLE hero section */
-    padding: 80px 0; /* Adjusted padding */
-    min-height: auto; /* Remove fixed min-height, let content define it */
+    background-color: #161616; /* New overall background: black */
+    padding: 80px 0;
+    min-height: 90vh; /* Make hero section larger, e.g., 90% of viewport height */
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically align content if section is taller than content */
     overflow: hidden; /* To contain decorative elements if they expand */
     position: relative; /* For absolute positioning of decorative elements */
 }
@@ -241,21 +241,20 @@ section {
 }
 
 .hero-content h1 {
-    font-size: 3.2rem; /* Larger font size */
-    font-weight: 700; /* Bold */
-    color: #FFFFFF; /* Light color for text on dark background */
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #FFFFFF; /* White text for contrast on #161616 */
     line-height: 1.1;
     margin-bottom: 0.6em;
 }
 
 .hero-content h1 .highlight-purple {
-    color: #63ccc5; /* Accent Color */
+    color: #63ccc5; /* Accent color remains the same */
 }
 
 .hero-content p.description {
-    font-size: 1rem; /* Standard paragraph size */
-    color: #e0e0e0; /* Light grey for readability on dark background */
-    /* opacity: 0.85; */ /* Opacity might not be needed if color is already soft */
+    font-size: 1rem;
+    color: #e0e0e0; /* Light grey for paragraph on #161616 */
     line-height: 1.7;
     margin-bottom: 2em;
 }
@@ -307,39 +306,37 @@ section {
 .hero-image-wrapper {
     position: relative;
     z-index: 1;
-    width: 280px;
-    height: 280px;
+    width: 550px; /* New dimension */
+    height: 550px; /* New dimension */
     border-radius: 50%;
     overflow: hidden;
-    /* Fallback background for image wrapper, can be transparent or a light color */
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent; /* Wrapper itself is transparent, gradient is the effect */
 }
 
 .hero-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: relative; /* To ensure it's above the ::before gradient if z-index on ::before is negative */
-    z-index: 1;
+    position: relative;
+    z-index: 1; /* Image on top of its ::before gradient */
 }
 
-/* New Radial Gradient using #242625 */
+/* Gradient using #242625 on the #161616 background */
 .hero-image-wrapper::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%; /* Same size as the wrapper for a contained gradient */
+    width: 100%;
     height: 100%;
     border-radius: 50%;
     background: radial-gradient(circle,
-        rgba(36, 38, 37, 0) 40%,    /* Transparent center, image shows through */
-        rgba(36, 38, 37, 0.6) 60%, /* Start of #242625, semi-transparent */
-        #242625 75%,               /* Solid #242625 */
-        #242625 100%               /* Edge of the circle is #242625 */
+        #242625 50%,               /* #242625 at the core of the gradient area */
+        rgba(36, 38, 37, 0.7) 75%, /* Transitioning #242625 with some transparency */
+        rgba(22, 22, 22, 0) 95%    /* Fading to transparent, revealing #161616 section bg */
     );
-    transform: translate(-50%, -50%) scale(1.15); /* Scale up slightly to ensure soft edge beyond image */
-    z-index: 0; /* Behind the img tag */
+    transform: translate(-50%, -50%) scale(1.2); /* Scale slightly larger for softer edges */
+    z-index: 0; /* Behind the actual image */
 }
 
 
@@ -350,7 +347,7 @@ section {
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    z-index: 0; /* Behind hero-image-wrapper's gradient if needed, or same level */
+    z-index: 0;
 }
 
 .decorative-circles .circle {
@@ -362,26 +359,26 @@ section {
     transform: translate(-50%, -50%);
 }
 
-/* Adjusted circle colors for light grey background */
+/* Adjusted circle sizes based on 550px image wrapper */
 .decorative-circles .circle-1 {
-    width: calc(280px + 120px);
-    height: calc(280px + 120px);
-    border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.25); /* Slightly more visible on light grey */
+    width: calc(550px + 160px);
+    height: calc(550px + 160px);
+    border-width: 3px;
+    border-color: rgba(99, 204, 197, 0.15); /* Circles might need to be more subtle on dark bg */
 }
 
 .decorative-circles .circle-2 {
-    width: calc(280px + 60px);
-    height: calc(280px + 60px);
-    border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.35);
+    width: calc(550px + 90px);
+    height: calc(550px + 90px);
+    border-width: 3px;
+    border-color: rgba(99, 204, 197, 0.2);
 }
 
 .decorative-circles .circle-3 {
-    width: calc(280px + 10px);
-    height: calc(280px + 10px);
+    width: calc(550px + 20px);
+    height: calc(550px + 20px);
     border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.45);
+    border-color: rgba(99, 204, 197, 0.25);
 }
 
 /* Plus symbols adjusted for new theme */
@@ -427,18 +424,23 @@ section {
     .hero-buttons {
         justify-content: center; /* Center buttons */
     }
-    .hero-image-wrapper { /* Adjust size for tablet */
-        width: 240px;
-        height: 240px;
+    .hero-image-wrapper {
+        width: 400px; /* Adjusted for tablet */
+        height: 400px;
     }
-    .decorative-circles .circle-1 { width: calc(240px + 100px); height: calc(240px + 100px); }
-    .decorative-circles .circle-2 { width: calc(240px + 50px); height: calc(240px + 50px); }
-    .decorative-circles .circle-3 { width: calc(240px + 10px); height: calc(240px + 10px); }
+    .decorative-circles .circle-1 { width: calc(400px + 120px); height: calc(400px + 120px); }
+    .decorative-circles .circle-2 { width: calc(400px + 70px); height: calc(400px + 70px); }
+    .decorative-circles .circle-3 { width: calc(400px + 15px); height: calc(400px + 15px); }
 }
 
 @media (max-width: 768px) {
     .hero-section.new-hero-design {
         padding: 60px 0;
+    }
+     .hero-image-container {
+        min-height: auto;
+        /* padding: 20px; /* Removed as the dark panel is gone */
+        /* background-color: #242625; /* Removed */
     }
     .hero-content h1 {
         font-size: 2.6rem;
@@ -447,28 +449,23 @@ section {
         font-size: 0.95rem;
     }
     .hero-buttons {
-        flex-direction: column; /* Stack buttons */
+        flex-direction: column;
         align-items: center;
     }
     .hero-buttons .btn {
         width: 80%;
         max-width: 280px;
     }
-     .hero-image-container { /* Adjust size for mobile */
-        min-height: auto; /* Let content define height */
-        padding: 20px; /* Add some padding if the dark box is smaller */
-        background-color: #242625; /* Ensure dark bg is still there */
+    .hero-image-wrapper {
+        width: 300px; /* Adjusted for mobile */
+        height: 300px;
     }
-    .hero-image-wrapper { /* Adjust size for mobile */
-        width: 200px;
-        height: 200px;
-    }
-    .decorative-circles .circle-1 { width: calc(200px + 80px); height: calc(200px + 80px); }
-    .decorative-circles .circle-2 { width: calc(200px + 40px); height: calc(200px + 40px); }
-    .decorative-circles .circle-3 { width: calc(200px + 10px); height: calc(200px + 10px); }
+    .decorative-circles .circle-1 { width: calc(300px + 100px); height: calc(300px + 100px); }
+    .decorative-circles .circle-2 { width: calc(300px + 50px); height: calc(300px + 50px); }
+    .decorative-circles .circle-3 { width: calc(300px + 10px); height: calc(300px + 10px); }
 
     .hero-section.new-hero-design::before, .hero-section.new-hero-design::after {
-        display: none; /* Hide plus symbols on smaller mobile */
+        display: none;
     }
 }
 
@@ -476,17 +473,51 @@ section {
     .hero-content h1 {
         font-size: 2.1rem;
     }
-     .hero-image-container {
-         /* No specific change, inherits from 768px */
+    .hero-image-wrapper {
+        width: 260px; /* Adjusted for smaller mobile */
+        height: 260px;
     }
-    .hero-image-wrapper { /* Adjust size for small mobile */
-        width: 180px;
-        height: 180px;
-    }
-    .decorative-circles .circle-1 { width: calc(180px + 70px); height: calc(180px + 70px); }
-    .decorative-circles .circle-2 { width: calc(180px + 35px); height: calc(180px + 35px); }
-    .decorative-circles .circle-3 { width: calc(180px + 8px); height: calc(180px + 8px); }
+    .decorative-circles .circle-1 { width: calc(260px + 80px); height: calc(260px + 80px); }
+    .decorative-circles .circle-2 { width: calc(260px + 40px); height: calc(260px + 40px); }
+    .decorative-circles .circle-3 { width: calc(260px + 8px); height: calc(260px + 8px); }
 }
+
+/* Navbar scroll effect */
+.navbar-section.scrolled {
+    background-color: #63ccc5; /* New background color on scroll */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: slightly stronger shadow */
+    transition: background-color 0.4s ease-out;
+}
+
+/* Adjust link colors for scrolled navbar if needed for contrast */
+.navbar-section.scrolled .logo,
+.navbar-section.scrolled .nav-links a,
+.navbar-section.scrolled .mobile-nav-toggle { /* Ensure hamburger icon also changes color */
+    color: #fff;
+}
+.navbar-section.scrolled .nav-links a:hover {
+    color: #161616; /* Darker hover for links on accent bg */
+}
+
+.navbar-section.scrolled .nav-contact-btn {
+    background-color: #fff;
+    color: #63ccc5; /* Accent color text */
+    border-color: #fff; /* White border */
+}
+.navbar-section.scrolled .nav-contact-btn:hover {
+    background-color: #161616;
+    color: #fff;
+    border-color: #161616;
+}
+
+/* Mobile nav active state */
+/* Ensures that when .nav-links gets .active, it's displayed */
+@media (max-width: 768px) {
+    .navbar-section .nav-links.active {
+        display: flex !important;
+    }
+}
+
 
 /* Services Section */
 .services-grid {
