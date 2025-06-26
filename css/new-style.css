@@ -209,7 +209,7 @@ section {
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
-    background-color: #fff; /* Assuming main background is white or very light based on new palette */
+    background-color: #242625; /* Dark background for the WHOLE hero section */
     padding: 80px 0; /* Adjusted padding */
     min-height: auto; /* Remove fixed min-height, let content define it */
     display: flex;
@@ -234,7 +234,7 @@ section {
 .hero-content .pre-header {
     font-size: 0.9rem; /* Smaller font size */
     font-weight: 600; /* Semi-bold */
-    color: #63ccc5; /* New Accent Color */
+    color: #63ccc5; /* Accent Color */
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.8em;
@@ -243,19 +243,19 @@ section {
 .hero-content h1 {
     font-size: 3.2rem; /* Larger font size */
     font-weight: 700; /* Bold */
-    color: #161616; /* New Dark Text Color */
+    color: #FFFFFF; /* Light color for text on dark background */
     line-height: 1.1;
     margin-bottom: 0.6em;
 }
 
 .hero-content h1 .highlight-purple {
-    color: #63ccc5; /* New Accent Color */
+    color: #63ccc5; /* Accent Color */
 }
 
 .hero-content p.description {
     font-size: 1rem; /* Standard paragraph size */
-    color: #161616; /* Dark text, can be softened if too harsh e.g. #4a4a4a */
-    opacity: 0.85; /* Slightly soften the pure black if needed */
+    color: #e0e0e0; /* Light grey for readability on dark background */
+    /* opacity: 0.85; */ /* Opacity might not be needed if color is already soft */
     line-height: 1.7;
     margin-bottom: 2em;
 }
@@ -299,8 +299,8 @@ section {
     position: relative; /* For positioning child decorative elements */
     min-height: 450px; /* Ensure space for decorations */
     max-width: 500px; /* Max width for image area */
-    background-color: #242625; /* Dark background for the image area */
-    border-radius: 15px; /* Optional: if the dark area itself has rounded corners */
+    /* background-color: #242625; REMOVED - Now entire section has this bg */
+    border-radius: 15px; /* Optional: if the image area still needs distinct rounded corners for some reason */
 }
 
 .hero-image-wrapper {
