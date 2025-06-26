@@ -72,13 +72,13 @@ p {
 
 .btn {
     display: inline-block;
-    padding: 0.8em 1.8em;
-    border-radius: 25px; /* Pill shape buttons from design */
-    font-weight: 600;
+    padding: 0.6em 1.5em; /* Reduced padding */
+    border-radius: 25px;
+    font-weight: 500; /* Slightly lighter font weight for elegance */
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
-    border: none;
+    border: 2px solid transparent; /* Default to transparent, specific buttons will override */
 }
 
 .btn-primary {
@@ -151,7 +151,7 @@ section {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1em 0;
+    padding: 0.6em 0; /* Reduced top/bottom padding */
 }
 
 .navbar-section .container {
@@ -188,14 +188,14 @@ section {
 .navbar-section .nav-contact-btn {
     margin-left: 1.5em;
     background-color: #fff;
-    color: #161616; /* Using new dark color for text */
-    border: 2px solid #63ccc5; /* Using new accent color for border */
+    color: #161616;
+    border: 2px solid #161616; /* Specified new border */
 }
 
 .navbar-section .nav-contact-btn:hover {
-    background-color: #63ccc5;
+    background-color: #161616; /* Dark background on hover */
     color: #fff;
-    border-color: #63ccc5;
+    border-color: #161616; /* Keep border consistent */
 }
 
 .mobile-nav-toggle {
@@ -209,7 +209,7 @@ section {
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
-    background-color: #242625; /* Dark background for the WHOLE hero section */
+    background-color: #f8f9fa; /* Light grayish background for the WHOLE hero section */
     padding: 80px 0; /* Adjusted padding */
     min-height: auto; /* Remove fixed min-height, let content define it */
     display: flex;
@@ -266,28 +266,30 @@ section {
 }
 
 .hero-buttons .btn-primary {
-    background-color: #63ccc5; /* New Accent Color */
+    background-color: #63ccc5; /* Accent Color */
     color: #fff;
-    padding: 0.9em 2.2em;
+    padding: 0.7em 1.8em; /* Reduced padding for hero buttons */
     font-size: 0.9rem;
-    border: 2px solid #63ccc5;
+    border: 2px solid #63ccc5; /* Default border for primary button, matching its bg */
 }
 .hero-buttons .btn-primary:hover {
     background-color: #fff;
     color: #63ccc5;
+    border-color: #63ccc5; /* Keep border consistent on hover */
 }
 
 .hero-buttons .btn-secondary {
     background-color: #fff;
-    color: #63ccc5; /* New Accent Color */
-    border: 2px solid #63ccc5;
-    padding: 0.9em 2.2em;
+    color: #161616; /* Dark text for Learn More button */
+    border: 2px solid #161616; /* Specified new border */
+    padding: 0.7em 1.8em; /* Reduced padding for hero buttons */
     font-size: 0.9rem;
 }
 
 .hero-buttons .btn-secondary:hover {
-    background-color: #63ccc5;
+    background-color: #161616; /* Dark hover */
     color: #fff;
+    border-color: #161616; /* Keep border consistent */
 }
 
 
@@ -296,40 +298,48 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* For positioning child decorative elements */
-    min-height: 450px; /* Ensure space for decorations */
-    max-width: 500px; /* Max width for image area */
-    /* background-color: #242625; REMOVED - Now entire section has this bg */
-    border-radius: 15px; /* Optional: if the image area still needs distinct rounded corners for some reason */
+    position: relative;
+    min-height: 450px;
+    max-width: 500px;
+    /* No explicit background color, will inherit from .hero-section.new-hero-design (#f8f9fa) */
 }
 
 .hero-image-wrapper {
     position: relative;
-    z-index: 1; /* Image above decorative circles but below hero-content if overlap */
-    width: 280px; /* Fixed width for the circle */
-    height: 280px; /* Fixed height for the circle */
-    border-radius: 50%; /* Makes the wrapper circular */
-    overflow: hidden; /* Clips the image to the circle */
-    background-color: #63ccc5; /* Fallback or base for image if it's transparent */
+    z-index: 1;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Fallback background for image wrapper, can be transparent or a light color */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hero-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the circle, might crop */
+    object-fit: cover;
+    position: relative; /* To ensure it's above the ::before gradient if z-index on ::before is negative */
+    z-index: 1;
 }
 
-/* Radial Gradient for image background - applied to wrapper's ::before */
-/* This will now be more subtle or adjusted to the new color scheme */
+/* New Radial Gradient using #242625 */
 .hero-image-wrapper::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Same size as the wrapper for a contained gradient */
+    height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(99, 204, 197, 0.3) 0%, rgba(99, 204, 197, 0.1) 50%, rgba(36, 38, 37, 0) 70%);
-    /* transform: translate(-50%, -50%); */
-    z-index: 1; /* Above image if needed, or -1 if purely background to image */
-    opacity: 0.8;
+    background: radial-gradient(circle,
+        rgba(36, 38, 37, 0) 40%,    /* Transparent center, image shows through */
+        rgba(36, 38, 37, 0.6) 60%, /* Start of #242625, semi-transparent */
+        #242625 75%,               /* Solid #242625 */
+        #242625 100%               /* Edge of the circle is #242625 */
+    );
+    transform: translate(-50%, -50%) scale(1.15); /* Scale up slightly to ensure soft edge beyond image */
+    z-index: 0; /* Behind the img tag */
 }
 
 
@@ -337,10 +347,10 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%; /* Relative to hero-image-container */
+    width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: 0; /* Behind hero-image-wrapper's gradient if needed, or same level */
 }
 
 .decorative-circles .circle {
@@ -352,26 +362,26 @@ section {
     transform: translate(-50%, -50%);
 }
 
-/* Adjusted circle colors and sizes for the new theme */
+/* Adjusted circle colors for light grey background */
 .decorative-circles .circle-1 {
-    width: calc(280px + 120px); /* Outermost, relative to image wrapper size */
+    width: calc(280px + 120px);
     height: calc(280px + 120px);
     border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.2); /* Accent color, semi-transparent */
+    border-color: rgba(99, 204, 197, 0.25); /* Slightly more visible on light grey */
 }
 
 .decorative-circles .circle-2 {
-    width: calc(280px + 60px); /* Middle */
+    width: calc(280px + 60px);
     height: calc(280px + 60px);
     border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.3);
+    border-color: rgba(99, 204, 197, 0.35);
 }
 
 .decorative-circles .circle-3 {
-    width: calc(280px + 10px); /* Innermost, slightly larger than image wrapper */
+    width: calc(280px + 10px);
     height: calc(280px + 10px);
     border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.4);
+    border-color: rgba(99, 204, 197, 0.45);
 }
 
 /* Plus symbols adjusted for new theme */
