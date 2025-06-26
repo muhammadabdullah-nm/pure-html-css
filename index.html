@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new-style.css">
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -20,388 +20,199 @@
 
     <!-- fontawesome  -->
     <script src="https://kit.fontawesome.com/45d3916235.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/45d3916235.js" crossorigin="anonymous"></script>
 
-    <title>Project II</title>
+    <title>Agency - Creative Digital Agency</title>
 </head>
 
 <body>
-    <!-- header  -->
-    <section class="header">
-        <div class="container1">
-            <div class="topbar ">
-                <!-- topbar logo  -->
-                <div class="logo">
-                    <img src="images/veterans_web_logo.jpg" alt="Veterans logo" class="topbarImg">
+
+    <!-- Navigation Bar Section Start -->
+    <header class="navbar-section">
+        <div class="container">
+            <a href="#" class="logo">Agency</a>
+            <nav class="nav-links" id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn btn-primary nav-contact-btn">Contact Us</a>
+            <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+    <!-- Navigation Bar Section End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We Are Creative Digital Agency</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget nunc egestas
+                    fermentum.</p>
+                <a href="#services" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/image1.jpg" alt="Creative Digital Agency Illustration"> <!-- Placeholder image -->
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Services Section Start -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">We offer a wide range of digital services to help your business grow.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Creating stunning and user-friendly websites tailored to your brand.</p>
                 </div>
-                <!-- topbar menu items  -->
-                <div class="topbarMenu">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Boosting your online presence and reaching your target audience effectively.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Crafting beautiful visuals that communicate your message clearly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- About Us Section Start -->
+    <section id="about" class="about-us-section">
+        <div class="container">
+            <div class="about-us-image">
+                <img src="images/about_us_img.jpg" alt="About Us Image"> <!-- Placeholder image -->
+            </div>
+            <div class="about-us-content">
+                <h2>About Us</h2>
+                <p>We are a passionate team of designers, developers, and strategists dedicated to delivering
+                    exceptional digital experiences. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <p class="section-subtitle">Check out some of our recent projects.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/image3.jpg" alt="Portfolio Project 1"> <!-- Placeholder image -->
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/image4.jpg" alt="Portfolio Project 2"> <!-- Placeholder image -->
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/image5.jpg" alt="Portfolio Project 3"> <!-- Placeholder image -->
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/image6.jpg" alt="Portfolio Project 4"> <!-- Placeholder image -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- Testimonials Section Start -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <img src="images/image7.jpg" alt="Client 1 Photo" class="client-photo"> <!-- Placeholder image -->
+                    <p>"This agency is fantastic! They delivered results beyond our expectations. Highly recommended."
+                    </p>
+                    <h4>John Doe</h4>
+                    <span>CEO, Company Inc.</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/image8.jpg" alt="Client 2 Photo" class="client-photo"> <!-- Placeholder image -->
+                    <p>"Working with them was a breeze. Professional, creative, and efficient."</p>
+                    <h4>Jane Smith</h4>
+                    <span>Marketing Manager, Another Co.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section End -->
+
+    <!-- Call to Action (CTA) Section Start -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have Any Project In Mind?</h2>
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+    <!-- Call to Action (CTA) Section End -->
+
+    <!-- Footer Section Start -->
+    <footer id="contact" class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column about-agency">
+                    <a href="#" class="logo">Agency</a>
+                    <p>We are a creative agency that loves to build amazing things for our clients.</p>
+                </div>
+                <div class="footer-column quick-links">
+                    <h4>Quick Links</h4>
                     <ul>
-                        <!-- mobile button  -->
-                        <li id="mobile-cross"><a href="javascript:void(0)" onclick="closeMenu()"><i
-                                    class="fa-solid fa-xmark"></i></a></li>
-                        <li><a href="">HOME</a></li>
-                        <li><a href="">ABOUT US</a></li>
-                        <li><a href="">SERVICES</a></li>
-                        <li><a href="">PACKAGES</a></li>
-                        <li><a href="">PORTFOLIO</a></li>
-                        <li><a href="">CONTACT US</a></li>
-                    </ul>
-
-                </div>
-                <!-- mobile menu button  -->
-                <div id="mobile-bar" onclick="openMenu()">
-                    <i class="fa-solid fa-bars"></i> Menu
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- digital marketing section  -->
-    <section class="dm-s">
-        <div class="container1">
-            <div class="dm-s-info">
-                <!-- class="dm-s-info bkgnd-img uni-padding" -->
-                <h2>
-                    Digital Marketing Agency
-                </h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, tempora unde. Illo accusamus
-                    obcaecati officiis nam velit nemo tenetur temporibus aliquid veniam, vel error provident? Totam
-                    debitis
-                    doloribus beatae aliquid amet ex aperiam. Fugit quibusdam labore itaque, quis, facere officia
-                    doloremque
-                    expedita error dolorum nostrum eveniet, iste optio ipsa exercitationem! Lorem, ipsum dolor sit amet
-                    consectetur adipisicing elit. Ut id odio veniam voluptatem.
-                </p>
-                <button id="readmore-btn"><a href=""> Read More </a></button>
-                <button id="contactus-btn"><a href="">CONTACT US</a></button>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- about us section  -->
-    <section class="abtus-s ">
-        <div class="container1">
-            <div class="section50">
-                <div class="abtus-s-info">
-                    <h1>ABOUT US</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla expedita
-                        ratione
-                        rerum. Libero error
-                        vel, iure eius modi illum esse accusamus aliquid! Vitae facere porro saepe numquam officiis
-                        fuga
-                        commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex rerum eius fuga
-                        voluptas
-                        nam
-                        necessitatibus expedita aspernatur ab nemo harum enim, ratione dolorum culpa, maiores rem
-                        tenetur
-                        impedit exercitationem sint dolor unde quam quis voluptatum! Non, nesciunt optio! Facilis
-                        nostrum
-                        architecto quibusdam et dolore. A fugit adipisci esse veniam tempore.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laudantium quisquam facere sed
-                        repudiandae rem amet aperiam optio placeat illum impedit provident,</p>
-                </div>
-            </div>
-            <div class="section50">
-                <img src="images/about_us_img.jpg" alt="about us image">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 
-    <section class="example">
-        <div class="container1">
-            <div class="main">
-                <h2>heading</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit repudiandae, unde iste repellendus
-                    itaque officia minima. Quis commodi, repudiandae ipsum minima, architecto eum voluptas soluta, minus
-            </div>
-        </div>
-    </section> -->
-
-
-    <!-- our services  -->
-    <section class="services-s">
-        <div class="container1">
-            <div class="services-s-info">
-                <h2 class="heading-center">OUR SERVICES</h2>
-                <div class="os">
-                    <div class="section33">
-                        <img src="images/seo_icon.png" alt="seo icon">
-                        <h3>SEO</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia cum eligendi pariatur
-                            vero magnam, animi ipsum! Quae, illum earum? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Doloremque quasi placeat in!</p>
-                    </div>
-                    <div class="section33">
-                        <img src="images/sem_icon.png" alt="sem icon">
-                        <h3>SEM</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia cum eligendi pariatur
-                            vero magnam, animi ipsum! Quae, illum earum? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Doloremque quasi placeat in!</p>
-                    </div>
-                    <div class="section33">
-                        <img src="images/facebook_icon.png" alt="facebook icon">
-                        <h3>FACEBOOK</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia cum eligendi pariatur
-                            vero magnam, animi ipsum! Quae, illum earum? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Doloremque quasi placeat in!</p>
-                    </div>
-                </div>
-
-                <div class="os-2">
-                    <div class="section33-II">
-                        <img src="images/webdevelopment-icon.png" alt="web development icon">
-                        <h3>WEBSITE DEVELOPMENT</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia cum eligendi pariatur
-                            vero magnam, animi ipsum! Quae, illum earum? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Doloremque quasi placeat in!</p>
-                    </div>
-                    <div class="section33-II">
-                        <img src="images/grapich-design.png" alt="grapich-design icon">
-                        <h3>GRAPHIC DESIGNING</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quia cum eligendi pariatur
-                            vero magnam, animi ipsum! Quae, illum earum? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Doloremque quasi placeat in!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- our packages  -->
-    <section class="our-pkgs-s">
-        <div class="container1">
-            <h2 class="heading-center">OUR PACKAGES</h2>
-            <div class="our-pkgs">
-                <div class="section33">
-                    <div class="startup">
-                        <h4>Startup</h4>
-
-                        <div class="pay">
-                            <p>$20</p>
-                        </div>
-
-                        <div class="getStarted-btn">
-                            <button><a href=""> Get Started</a></button>
-                        </div>
-
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                <div class="section33">
-                    <div class="startup">
-                        <h4>Small</h4>
-
-                        <div class="pay">
-                            <p>$160</p>
-                        </div>
-                        <div class="getStarted-btn">
-                            <button><a href=""> Get Started</a></button>
-                        </div>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-
-                <div class="section33">
-                    <div class="startup">
-                        <h4>Enterprise</h4>
-                        <div class="pay">
-                            <p>$40</p>
-                        </div>
-                        <div class="getStarted-btn">
-                            <button><a href=""> Get Started</a></button>
-                        </div>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- funfact section  -->
-    <section class="funfact-s">
-        <div class="container1">
-            <div class="funfact-s-col">
-                <div class="section25">
-                    <i class="fa-solid fa-chart-line fa-2xl"></i>
-                    <h3>16</h3>
-                    <p>Your Experience</p>
-                </div>
-                <div class="section25">
-                    <i class="fa-solid fa-thumbs-up fa-2xl"></i>
-                    <h3>66</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="section25">
-                    <i class="fa-solid fa-trophy fa-2xl"></i>
-                    <h3>51</h3>
-                    <p>Hundred Projects</p>
-                </div>
-                <div class="section25">
-                    <i class="fa-solid fa-mug-hot fa-2xl"></i>
-                    <h3>49</h3>
-                    <p>Cube Cups</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- our Portfolio  -->
-    <section class="portfolio-s">
-        <div class="container1">
-            <div class="portfolio-info">
-                <h2>OUR PORTFOLIO</h2>
-                <div class="port-img">
-                    <img src="images/image1.jpg" alt="portfolio-image-01">
-                    <img src="images/image8.jpg" alt="portfolio-image-02">
-                    <img src="images/image3.jpg" alt="portfolio-image-03">
-                </div>
-                <div class="port-img">
-                    <img src="images/image4.jpg" alt="portfolio-image-04">
-                    <img src="images/image5.jpg" alt="portfolio-image-05">
-                    <img src="images/image6.jpg" alt="portfolio-image-06">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <!-- footer  -->
-    <footer class="footer-v">
-        <div class="container1">
-            <div class="form">
-                <div class="section50 faq">
-                    <h2>FAQs</h2>
-                    <ul>
-                        <li>
-                            <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li> <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li> <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="accordion buttons">What is Lorem ipsum dolor?<i
-                                    class="fa-solid fa-angle-down"></i></button>
-                            <div class="panel">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="section50">
-                    <div class="contactus">
-                        <h2>CONTACT US</h2>
-                        <ul class="contactus-inputs">
-                            <li><input class=" buttons accordion" type="text" placeholder="Name"></li>
-                            <li><input class=" buttons accordion" type="text" placeholder="Email"></li>
-                            <li><input class=" buttons accordion" type="text" placeholder="Subject"></li>
-                            <li><input class=" buttons accordion last-section" type="text"></li>
-
-                        </ul>
-                        <button type="submit" class="contactusButton">Send</button>
-                    </div>
+                <div class="footer-column services-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-info">
+                    <h4>Contact Us</h4>
+                    <p>123 Street Name, City, Country</p>
+                    <p>Email: info@agency.com</p>
+                    <p>Phone: +123 456 7890</p>
                 </div>
             </div>
-        </div>
-        <div class="copyright-footer">
-            <div class="container1">
-                <p class="caption">&copy; Copyright 2018, All Rights Reserved.</p>
-                <div class="social-icons">
-                    <a href=""><i class="fa-brands fa-twitter-square"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook-square"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram-square"></i></a>
-                </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 Agency. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    </div>
+    <!-- Footer Section End -->
 
-
-
-    <!-- script  -->
     <script src="js/script.js"></script>
 </body>
 
