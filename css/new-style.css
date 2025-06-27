@@ -146,8 +146,8 @@ section {
 
 /* Navigation Bar Section */
 .navbar-section {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to bottom, #01001f, #050e51);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slightly adjusted shadow for dark bg */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -163,7 +163,7 @@ section {
 .navbar-section .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1a2a48; /* Dark blue */
+    color: #fff; /* Light color for logo */
 }
 
 .navbar-section .nav-links ul {
@@ -175,27 +175,27 @@ section {
 }
 
 .navbar-section .nav-links a {
-    color: #333;
+    color: #e0e0e0; /* Light grey for links */
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .navbar-section .nav-links a:hover,
-.navbar-section .nav-links a.active { /* Add .active class with JS for current page */
-    color: #6A40E9; /* Purple */
+.navbar-section .nav-links a.active {
+    color: #63ccc5; /* Accent color for hover/active */
 }
 
 .navbar-section .nav-contact-btn {
     margin-left: 1.5em;
-    background-color: #fff;
-    color: #161616;
-    border: 2px solid #161616; /* Specified new border */
+    background-color: #35395c; /* Match hero pill bg */
+    color: #fff;
+    border: 2px solid #35395c;
 }
 
 .navbar-section .nav-contact-btn:hover {
-    background-color: #161616; /* Dark background on hover */
+    background-color: #4a4f70;
     color: #fff;
-    border-color: #161616; /* Keep border consistent */
+    border-color: #4a4f70;
 }
 
 .mobile-nav-toggle {
@@ -203,319 +203,149 @@ section {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #1a2a48;
+    color: #fff; /* Light color for hamburger */
     cursor: pointer;
 }
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
-    background-color: #161616; /* New overall background: black */
-    padding: 80px 0;
-    min-height: 90vh; /* Make hero section larger, e.g., 90% of viewport height */
+    background: linear-gradient(to bottom, #01001f, #050e51); /* New gradient background */
+    padding: 60px 0; /* Adjust padding as needed, especially with centered content */
+    min-height: 90vh;
     display: flex;
-    align-items: center; /* Vertically align content if section is taller than content */
-    overflow: hidden; /* To contain decorative elements if they expand */
-    position: relative; /* For absolute positioning of decorative elements */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    text-align: center; /* Center text within .hero-content */
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-section.new-hero-design .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem; /* Gap between text content and image container */
+    /* Container might not need flex properties if section itself handles centering */
+    width: 90%; /* Keep container constraints */
+    max-width: 800px; /* Max width for centered content block */
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 580px; /* Max width for text content */
-    z-index: 2; /* Ensure content is above decorative elements if they overlap */
+    /* flex: 1; Removed, as content is now centered by section */
+    /* max-width: 580px; Adjusted by container */
+    z-index: 2;
+}
+
+.hero-pill-text {
+    display: inline-block; /* So it's only as wide as content + padding */
+    background-color: #35395c;
+    color: #fff;
+    padding: 0.6em 1.5em; /* Adjust padding */
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px; /* Space below the pill text, adjusted from 20px */
 }
 
 .hero-content .pre-header {
-    font-size: 0.9rem; /* Smaller font size */
-    font-weight: 600; /* Semi-bold */
-    color: #63ccc5; /* Accent Color */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #63ccc5;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.8em;
+    margin-bottom: 1em; /* Adjusted margin */
 }
 
 .hero-content h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem; /* Adjusted size for centered layout */
     font-weight: 700;
-    color: #FFFFFF; /* White text for contrast on #161616 */
-    line-height: 1.1;
-    margin-bottom: 0.6em;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
 }
 
-.hero-content h1 .highlight-purple {
-    color: #63ccc5; /* Accent color remains the same */
+.hero-content h1 .highlight-purple { /* Will rename this class if it's no longer purple */
+    color: #63ccc5;
 }
 
 .hero-content p.description {
     font-size: 1rem;
-    color: #e0e0e0; /* Light grey for paragraph on #161616 */
+    color: #e0e0e0;
     line-height: 1.7;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em; /* Adjusted margin */
+    max-width: 600px; /* Constrain paragraph width for better readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem; /* Space between buttons */
+    justify-content: center; /* Center buttons since text-align:center on parent */
+    gap: 1rem;
 }
 
-.hero-buttons .btn-primary {
-    background-color: #63ccc5; /* Accent Color */
-    color: #fff;
-    padding: 0.7em 1.8em; /* Reduced padding for hero buttons */
-    font-size: 0.9rem;
-    border: 2px solid #63ccc5; /* Default border for primary button, matching its bg */
-}
-.hero-buttons .btn-primary:hover {
-    background-color: #fff;
-    color: #63ccc5;
-    border-color: #63ccc5; /* Keep border consistent on hover */
-}
-
-.hero-buttons .btn-secondary {
-    background-color: #fff;
-    color: #161616; /* Dark text for Learn More button */
-    border: 2px solid #161616; /* Specified new border */
-    padding: 0.7em 1.8em; /* Reduced padding for hero buttons */
-    font-size: 0.9rem;
-}
-
-.hero-buttons .btn-secondary:hover {
-    background-color: #161616; /* Dark hover */
-    color: #fff;
-    border-color: #161616; /* Keep border consistent */
-}
-
-
-.hero-image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 450px;
-    max-width: 500px;
-    /* No explicit background color, will inherit from .hero-section.new-hero-design (#f8f9fa) */
-}
-
-.hero-image-wrapper {
-    position: relative;
-    z-index: 1;
-    width: 550px; /* New dimension */
-    height: 550px; /* New dimension */
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: transparent; /* Wrapper itself is transparent, gradient is the effect */
-}
-
-.hero-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1; /* Image on top of its ::before gradient */
-}
-
-/* Gradient using #242625 on the #161616 background */
-.hero-image-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle,
-        #242625 50%,               /* #242625 at the core of the gradient area */
-        rgba(36, 38, 37, 0.7) 75%, /* Transitioning #242625 with some transparency */
-        rgba(22, 22, 22, 0) 95%    /* Fading to transparent, revealing #161616 section bg */
-    );
-    transform: translate(-50%, -50%) scale(1.2); /* Scale slightly larger for softer edges */
-    z-index: 0; /* Behind the actual image */
-}
-
-
-.decorative-circles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-.decorative-circles .circle {
-    position: absolute;
-    border-style: solid;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Adjusted circle sizes based on 550px image wrapper */
-.decorative-circles .circle-1 {
-    width: calc(550px + 160px);
-    height: calc(550px + 160px);
-    border-width: 3px;
-    border-color: rgba(99, 204, 197, 0.15); /* Circles might need to be more subtle on dark bg */
-}
-
-.decorative-circles .circle-2 {
-    width: calc(550px + 90px);
-    height: calc(550px + 90px);
-    border-width: 3px;
-    border-color: rgba(99, 204, 197, 0.2);
-}
-
-.decorative-circles .circle-3 {
-    width: calc(550px + 20px);
-    height: calc(550px + 20px);
-    border-width: 2px;
-    border-color: rgba(99, 204, 197, 0.25);
-}
-
-/* Plus symbols adjusted for new theme */
-.hero-section.new-hero-design::after, .hero-section.new-hero-design::before {
-    content: '+';
-    position: absolute;
-    font-size: 1.5rem;
-    color: rgba(99, 204, 197, 0.4); /* Accent color, semi-transparent */
-    z-index: 0;
-}
-/* Keep example positioning or adjust as needed */
-.hero-section.new-hero-design::before {
-    top: 20%;
-    left: 55%;
-}
-.hero-section.new-hero-design::after {
-    bottom: 25%;
-    right: 15%;
-    font-size: 1.2rem;
-    color: rgba(99, 204, 197, 0.3);
-}
-
+/* Styles for .hero-image-container, .hero-image-wrapper, .decorative-circles, plus symbols will be removed */
+/* as there's no image in the new design for hero section */
 
 /* Responsive adjustments for the new hero section */
 @media (max-width: 992px) {
-    .hero-section.new-hero-design .container {
-        flex-direction: column;
-        text-align: center;
+    /* .hero-section.new-hero-design .container can remain as is or adjust max-width if needed */
+    .hero-content h1 {
+        font-size: 2.4rem;
     }
-    .hero-content {
-        order: 2; /* Text below image on tablet if desired, or remove for text first */
-        margin-bottom: 3rem; /* Space below text content */
-        max-width: 100%;
-    }
-    .hero-image-container {
-        order: 1;
-        margin-bottom: 2rem; /* Space below image block */
-        min-height: 380px; /* Adjust for smaller screens */
-    }
-    .hero-content .pre-header, .hero-content h1 {
-        text-align: center;
-    }
-    .hero-buttons {
-        justify-content: center; /* Center buttons */
-    }
-    .hero-image-wrapper {
-        width: 400px; /* Adjusted for tablet */
-        height: 400px;
-    }
-    .decorative-circles .circle-1 { width: calc(400px + 120px); height: calc(400px + 120px); }
-    .decorative-circles .circle-2 { width: calc(400px + 70px); height: calc(400px + 70px); }
-    .decorative-circles .circle-3 { width: calc(400px + 15px); height: calc(400px + 15px); }
 }
 
 @media (max-width: 768px) {
     .hero-section.new-hero-design {
-        padding: 60px 0;
-    }
-     .hero-image-container {
-        min-height: auto;
-        /* padding: 20px; /* Removed as the dark panel is gone */
-        /* background-color: #242625; /* Removed */
+        padding: 40px 0; /* Reduced padding for mobile */
+        min-height: 80vh; /* Adjust min-height for mobile */
     }
     .hero-content h1 {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
     .hero-content p.description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+    }
+    .hero-pill-text {
+        font-size: 0.8rem;
+        padding: 0.5em 1.2em;
+        margin-bottom: 20px;
     }
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
     .hero-buttons .btn {
-        width: 80%;
-        max-width: 280px;
-    }
-    .hero-image-wrapper {
-        width: 300px; /* Adjusted for mobile */
-        height: 300px;
-    }
-    .decorative-circles .circle-1 { width: calc(300px + 100px); height: calc(300px + 100px); }
-    .decorative-circles .circle-2 { width: calc(300px + 50px); height: calc(300px + 50px); }
-    .decorative-circles .circle-3 { width: calc(300px + 10px); height: calc(300px + 10px); }
-
-    .hero-section.new-hero-design::before, .hero-section.new-hero-design::after {
-        display: none;
+        width: 70%;
+        max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 2.1rem;
+        font-size: 1.8rem;
     }
-    .hero-image-wrapper {
-        width: 260px; /* Adjusted for smaller mobile */
-        height: 260px;
+    .hero-pill-text {
+        font-size: 0.75rem;
     }
-    .decorative-circles .circle-1 { width: calc(260px + 80px); height: calc(260px + 80px); }
-    .decorative-circles .circle-2 { width: calc(260px + 40px); height: calc(260px + 40px); }
-    .decorative-circles .circle-3 { width: calc(260px + 8px); height: calc(260px + 8px); }
 }
 
-/* Navbar scroll effect */
-.navbar-section.scrolled {
-    background-color: #63ccc5; /* New background color on scroll */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: slightly stronger shadow */
-    transition: background-color 0.4s ease-out;
-}
-
-/* Adjust link colors for scrolled navbar if needed for contrast */
-.navbar-section.scrolled .logo,
-.navbar-section.scrolled .nav-links a,
-.navbar-section.scrolled .mobile-nav-toggle { /* Ensure hamburger icon also changes color */
-    color: #fff;
-}
-.navbar-section.scrolled .nav-links a:hover {
-    color: #161616; /* Darker hover for links on accent bg */
-}
-
-.navbar-section.scrolled .nav-contact-btn {
-    background-color: #fff;
-    color: #63ccc5; /* Accent color text */
-    border-color: #fff; /* White border */
-}
-.navbar-section.scrolled .nav-contact-btn:hover {
-    background-color: #161616;
-    color: #fff;
-    border-color: #161616;
-}
+/* REMOVING .scrolled styles as navbar is now consistently dark blue gradient */
 
 /* Mobile nav active state */
 /* Ensures that when .nav-links gets .active, it's displayed */
 @media (max-width: 768px) {
-    .navbar-section .nav-links.active {
+    .navbar-section .nav-links.active { /* This is for the new mobile nav */
         display: flex !important;
+        background-color: #050e51; /* Ensure mobile nav dropdown has dark bg */
     }
+     .navbar-section .nav-links { /* Mobile nav specific styles */
+        background-color: #050e51; /* Dark background for mobile dropdown */
+     }
+     .navbar-section .nav-links a { /* Ensure mobile links are light */
+        color: #e0e0e0;
+     }
+     .navbar-section .nav-links a:hover {
+        color: #63ccc5;
+     }
 }
 
 
