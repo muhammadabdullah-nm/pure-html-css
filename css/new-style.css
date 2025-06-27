@@ -146,12 +146,13 @@ section { /* Default padding for other sections */
 
 /* Navigation Bar Section */
 .navbar-section {
-    background: transparent; /* Make navbar transparent */
-    box-shadow: none; /* Remove shadow for seamless look */
+    background-color: #01001f; /* Default background: top color of hero gradient */
+    box-shadow: none; /* No shadow by default */
     position: sticky;
     top: 0;
     z-index: 1000; /* Keep navbar on top */
     padding: 0.6em 0;
+    transition: background-color 0.4s ease-out; /* For scroll effect */
 }
 
 .navbar-section .container {
@@ -164,6 +165,7 @@ section { /* Default padding for other sections */
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
+    transition: color 0.4s ease-out;
 }
 
 .navbar-section .nav-links ul {
@@ -177,7 +179,7 @@ section { /* Default padding for other sections */
 .navbar-section .nav-links a {
     color: #e0e0e0;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease-out;
 }
 
 .navbar-section .nav-links a:hover,
@@ -190,6 +192,7 @@ section { /* Default padding for other sections */
     background-color: #35395c;
     color: #fff;
     border: 2px solid #35395c;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-section .nav-contact-btn:hover {
@@ -205,20 +208,49 @@ section { /* Default padding for other sections */
     font-size: 1.5rem;
     color: #fff;
     cursor: pointer;
+    transition: color 0.4s ease-out;
 }
+
+/* Scrolled Navbar Styles */
+.navbar-section.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add shadow when scrolled */
+}
+
+.navbar-section.scrolled .logo,
+.navbar-section.scrolled .nav-links a,
+.navbar-section.scrolled .mobile-nav-toggle {
+    color: #161616; /* Black text on white background */
+}
+
+.navbar-section.scrolled .nav-links a:hover,
+.navbar-section.scrolled .nav-links a.active {
+    color: #050e51; /* Dark blue for hover/active on white background */
+}
+
+.navbar-section.scrolled .nav-contact-btn {
+    background-color: #01001f; /* Dark blue background */
+    color: #fff;
+    border-color: #01001f;
+}
+.navbar-section.scrolled .nav-contact-btn:hover {
+    background-color: #050e51;
+    border-color: #050e51;
+}
+
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
     background: linear-gradient(to bottom, #01001f, #050e51);
-    padding: 60px 0;
-    min-height: 90vh;
+    padding-top: 80px; /* Increased padding top to push content below navbar */
+    padding-bottom: 180px; /* Increased padding to accommodate new separator height */
+    min-height: 95vh; /* Adjusted height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding-bottom: 150px; /* Adjusted to match separator height for safety */
 }
 
 .hero-section.new-hero-design .container {
@@ -280,6 +312,58 @@ section { /* Default padding for other sections */
     gap: 1rem;
 }
 
+/* New Hero Bottom Separator (4 layers) */
+.hero-bottom-separator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 200px; /* Adjusted height for the new design */
+    pointer-events: none;
+}
+
+.separator-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure bg covers if using image later, not relevant for color */
+}
+
+/* Colors sampled from new image: https://i.postimg.cc/8zF4W35G/image.png */
+/* Topmost dark layer (darkest blue/purple) */
+.separator-layer.layer-1 {
+    background-color: #0A185F; /* Approx from image */
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 80%); /* Skewed shape */
+    z-index: 4;
+    border-bottom-right-radius: 30px; /* Attempting rounded corner */
+}
+
+/* Second layer (medium blue) */
+.separator-layer.layer-2 {
+    background-color: #1A54E6; /* Approx from image */
+    clip-path: polygon(0 25%, 100% 0, 100% 75%, 0% 90%);
+    z-index: 3;
+    border-bottom-right-radius: 30px;
+}
+
+/* Third layer (lighter teal/cyan) */
+.separator-layer.layer-3 {
+    background-color: #31DBC1; /* Approx from image */
+    clip-path: polygon(0 50%, 100% 20%, 100% 95%, 0% 100%);
+    z-index: 2;
+    border-bottom-right-radius: 30px;
+}
+
+/* Fourth layer (very light grey/white or pale teal) */
+.separator-layer.layer-4 {
+    background-color: #E9FBF8; /* Approx pale teal/white from image */
+    clip-path: polygon(0 70%, 100% 40%, 100% 100%, 0% 100%);
+    z-index: 1;
+    border-bottom-right-radius: 25px;
+}
+
+
 /* Responsive adjustments for the new hero section */
 @media (max-width: 992px) {
     .hero-content h1 {
@@ -289,9 +373,9 @@ section { /* Default padding for other sections */
 
 @media (max-width: 768px) {
     .hero-section.new-hero-design {
-        padding: 40px 0;
-        min-height: 80vh;
-        padding-bottom: 100px; /* Adjust for smaller separator */
+        padding-top: 60px;
+        min-height: 85vh;
+        padding-bottom: 120px; /* Adjust for smaller separator */
     }
     .hero-content h1 {
         font-size: 2rem;
@@ -312,6 +396,9 @@ section { /* Default padding for other sections */
         width: 70%;
         max-width: 250px;
     }
+    .hero-bottom-separator {
+        height: 150px; /* Adjust separator height for mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -322,63 +409,13 @@ section { /* Default padding for other sections */
         font-size: 0.75rem;
     }
     .hero-section.new-hero-design {
-        padding-bottom: 80px; /* Adjust for smaller separator */
+        padding-bottom: 100px; /* Adjust for smaller separator */
     }
-}
-
-/* Hero Section Bottom Separator */
-.hero-bottom-separator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 180px; /* Increased height for more pronounced effect */
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.separator-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-}
-
-/* Layer 1: Top Dark Blue/Purple Layer */
-.separator-layer.layer-1 {
-    background-color: #0A195E; /* Sampled color: Dark Blue/Purple */
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); /* Angled cut */
-    z-index: 3;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-}
-
-/* Layer 2: Middle Medium Blue Layer */
-.separator-layer.layer-2 {
-    background-color: #2E67F8; /* Sampled color: Medium Blue */
-    clip-path: polygon(0 45%, 100% 15%, 100% 85%, 0 100%);
-    z-index: 2;
-    filter: drop-shadow(0 4px 5px rgba(0,0,0,0.1));
-}
-
-/* Layer 3: Bottom Teal/Cyan Layer */
-.separator-layer.layer-3 {
-    background-color: #32DBC2; /* Sampled color: Teal/Cyan */
-    clip-path: polygon(0 75%, 100% 45%, 100% 100%, 0 100%);
-    z-index: 1;
-}
-
-/* Responsive adjustments for separator */
-@media (max-width: 768px) {
-    .hero-bottom-separator {
+     .hero-bottom-separator {
         height: 120px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-bottom-separator {
-        height: 100px;
-    }
-}
 
 /* Mobile nav active state */
 @media (max-width: 768px) {
