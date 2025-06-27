@@ -213,38 +213,39 @@ section { /* Default padding for other sections */
 
 /* Scrolled Navbar Styles */
 .navbar-section.scrolled {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add shadow when scrolled */
+    background-color: #fff; /* Corrected: White background on scroll */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar-section.scrolled .logo,
 .navbar-section.scrolled .nav-links a,
 .navbar-section.scrolled .mobile-nav-toggle {
-    color: #161616; /* Black text on white background */
+    color: #161616; /* Dark text for contrast on white bg */
 }
 
 .navbar-section.scrolled .nav-links a:hover,
 .navbar-section.scrolled .nav-links a.active {
-    color: #050e51; /* Dark blue for hover/active on white background */
+    color: #63ccc5; /* Accent color for hover/active on white bg */
 }
 
 .navbar-section.scrolled .nav-contact-btn {
-    background-color: #01001f; /* Dark blue background */
-    color: #fff;
-    border-color: #01001f;
+    background-color: #fff;
+    color: #01001f; /* Dark blue text */
+    border-color: #01001f; /* Dark blue border */
 }
 .navbar-section.scrolled .nav-contact-btn:hover {
-    background-color: #050e51;
-    border-color: #050e51;
+    background-color: #01001f; /* Dark blue background on hover */
+    color: #fff;
+    border-color: #01001f;
 }
 
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
     background: linear-gradient(to bottom, #01001f, #050e51);
-    padding-top: 80px; /* Increased padding top to push content below navbar */
-    padding-bottom: 180px; /* Increased padding to accommodate new separator height */
-    min-height: 95vh; /* Adjusted height */
+    padding-top: 80px;
+    padding-bottom: 80px; /* Standard padding now that separator is gone */
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,13 +254,72 @@ section { /* Default padding for other sections */
     overflow: hidden;
 }
 
+.hero-section.new-hero-design::before { /* Circuit lines and nodes */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image:
+        /* Nodes */
+        radial-gradient(circle at 10% 30%, rgba(99, 204, 197, 0.3) 2px, transparent 3px),
+        radial-gradient(circle at 90% 70%, rgba(99, 204, 197, 0.3) 2px, transparent 3px),
+        radial-gradient(circle at 50% 50%, rgba(99, 204, 197, 0.3) 3px, transparent 4px),
+        radial-gradient(circle at 25% 80%, rgba(99, 204, 197, 0.3) 2px, transparent 3px),
+        radial-gradient(circle at 75% 10%, rgba(99, 204, 197, 0.3) 2px, transparent 3px),
+        /* Lines */
+        linear-gradient(rgba(99, 204, 197, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 204, 197, 0.1) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(99, 204, 197, 0.05) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(99, 204, 197, 0.05) 1px, transparent 1px);
+    background-size:
+        100px 100px, 100px 100px, 100px 100px, 100px 100px, 100px 100px, /* Nodes */
+        50px 50px, 50px 50px, /* Orthogonal Lines */
+        70px 70px, 70px 70px; /* Diagonal Lines */
+    z-index: 0;
+    animation: flowLines 30s linear infinite;
+}
+
+.hero-section.new-hero-design::after { /* Subtle geometric overlay & particles */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image:
+        /* Particles */
+        radial-gradient(rgba(99, 204, 197, 0.2) 1px, transparent 1px),
+        radial-gradient(rgba(53, 57, 92, 0.3) 2px, transparent 2px);
+    background-size: 30px 30px, 60px 60px;
+    background-position: 0 0, 15px 15px; /* Offset particle grids */
+    /* Example subtle large shape:
+    /* background-image:
+        radial-gradient(rgba(99, 204, 197, 0.2) 1px, transparent 1px),
+        radial-gradient(rgba(53, 57, 92, 0.3) 2px, transparent 2px),
+        linear-gradient(135deg, rgba(53, 57, 92, 0.2) 0%, transparent 50%); */
+    /* clip-path: polygon(0 0, 40% 0, 60% 100%, 0% 100%); */
+    z-index: 0; /* Same level as ::before or adjust if needed */
+    animation: pulseParticles 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes flowLines {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 200px 100px, -100px 200px, 50px -50px, -200px 100px, 100px -200px, 50px 0, 0 50px, 70px 0, 0 70px; }
+}
+
+@keyframes pulseParticles {
+    0% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.02); }
+    100% { opacity: 0.1; transform: scale(1); }
+}
+
+
 .hero-section.new-hero-design .container {
     width: 90%;
     max-width: 800px;
+    position: relative; /* To ensure content is above pseudo-elements */
+    z-index: 1;
 }
 
 .hero-content {
-    z-index: 2;
+    z-index: 1; /* Explicitly above background pseudo-elements */
 }
 
 .hero-pill-text {
@@ -312,58 +372,6 @@ section { /* Default padding for other sections */
     gap: 1rem;
 }
 
-/* New Hero Bottom Separator (4 layers) */
-.hero-bottom-separator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 200px; /* Adjusted height for the new design */
-    pointer-events: none;
-}
-
-.separator-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover; /* Ensure bg covers if using image later, not relevant for color */
-}
-
-/* Colors sampled from new image: https://i.postimg.cc/8zF4W35G/image.png */
-/* Topmost dark layer (darkest blue/purple) */
-.separator-layer.layer-1 {
-    background-color: #0A185F; /* Approx from image */
-    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 80%); /* Skewed shape */
-    z-index: 4;
-    border-bottom-right-radius: 30px; /* Attempting rounded corner */
-}
-
-/* Second layer (medium blue) */
-.separator-layer.layer-2 {
-    background-color: #1A54E6; /* Approx from image */
-    clip-path: polygon(0 25%, 100% 0, 100% 75%, 0% 90%);
-    z-index: 3;
-    border-bottom-right-radius: 30px;
-}
-
-/* Third layer (lighter teal/cyan) */
-.separator-layer.layer-3 {
-    background-color: #31DBC1; /* Approx from image */
-    clip-path: polygon(0 50%, 100% 20%, 100% 95%, 0% 100%);
-    z-index: 2;
-    border-bottom-right-radius: 30px;
-}
-
-/* Fourth layer (very light grey/white or pale teal) */
-.separator-layer.layer-4 {
-    background-color: #E9FBF8; /* Approx pale teal/white from image */
-    clip-path: polygon(0 70%, 100% 40%, 100% 100%, 0% 100%);
-    z-index: 1;
-    border-bottom-right-radius: 25px;
-}
-
-
 /* Responsive adjustments for the new hero section */
 @media (max-width: 992px) {
     .hero-content h1 {
@@ -375,7 +383,7 @@ section { /* Default padding for other sections */
     .hero-section.new-hero-design {
         padding-top: 60px;
         min-height: 85vh;
-        padding-bottom: 120px; /* Adjust for smaller separator */
+        padding-bottom: 60px;
     }
     .hero-content h1 {
         font-size: 2rem;
@@ -396,9 +404,6 @@ section { /* Default padding for other sections */
         width: 70%;
         max-width: 250px;
     }
-    .hero-bottom-separator {
-        height: 150px; /* Adjust separator height for mobile */
-    }
 }
 
 @media (max-width: 480px) {
@@ -409,10 +414,7 @@ section { /* Default padding for other sections */
         font-size: 0.75rem;
     }
     .hero-section.new-hero-design {
-        padding-bottom: 100px; /* Adjust for smaller separator */
-    }
-     .hero-bottom-separator {
-        height: 120px;
+        padding-bottom: 40px;
     }
 }
 
@@ -665,20 +667,6 @@ section { /* Default padding for other sections */
     h1 { font-size: 2.4rem; }
     h2 { font-size: 1.9rem; }
 
-    /* Original hero responsive, might need removal if hero content itself is simple enough */
-    /* .hero-section .container {
-        flex-direction: column;
-        text-align: center;
-    } */
-    /* .hero-content {
-        max-width: 100%;
-        margin-bottom: 2rem;
-    } */
-    /* .hero-image {
-        max-width: 400px;
-        margin: 0 auto;
-    } */
-
     .about-us-section .container {
         flex-direction: column;
     }
@@ -705,13 +693,11 @@ section { /* Default padding for other sections */
         top: 100%;
         left: 0;
         right: 0;
-        /* background-color: #fff; Removed, handled by .active specific style */
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         flex-direction: column;
         padding: 1em 0;
     }
 
-    /* .navbar-section .nav-links.active is defined lower down with other mobile nav styles */
 
     .navbar-section .nav-links li {
         margin: 0;
@@ -720,7 +706,7 @@ section { /* Default padding for other sections */
     .navbar-section .nav-links a {
         display: block;
         padding: 0.8em 1em;
-        border-bottom: 1px solid #f0f0f0; /* Might need adjustment for dark bg */
+        border-bottom: 1px solid #f0f0f0;
     }
     .navbar-section .nav-links li:last-child a {
         border-bottom: none;
@@ -756,7 +742,7 @@ section { /* Default padding for other sections */
     body {
         font-size: 15px;
     }
-    h1 { font-size: 2rem; } /* Adjusted h1 for hero, this might be too general */
+    h1 { font-size: 2rem; }
     h2 { font-size: 1.7rem; }
     .container {
         width: 95%;
@@ -765,11 +751,8 @@ section { /* Default padding for other sections */
         padding: 0.7em 1.5em;
         font-size: 0.9rem;
     }
-    /* .hero-section {
-        padding: 60px 0;
-        min-height: auto;
-    } */ /* Covered by more specific hero styles */
-    section:not(.hero-section) { /* Ensure other sections keep their padding */
+
+    section:not(.hero-section) {
         padding: 60px 0;
     }
     .portfolio-grid {
