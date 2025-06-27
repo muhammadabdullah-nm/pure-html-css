@@ -140,19 +140,18 @@ p {
 }
 
 /* Section Padding */
-section {
+section { /* Default padding for other sections */
     padding: 80px 0;
 }
 
 /* Navigation Bar Section */
 .navbar-section {
     background: transparent; /* Make navbar transparent */
-    /* Or use: background-color: #01001f; /* Match top of hero gradient */
     box-shadow: none; /* Remove shadow for seamless look */
     position: sticky;
     top: 0;
-    z-index: 1000;
-    padding: 0.6em 0; /* Reduced top/bottom padding */
+    z-index: 1000; /* Keep navbar on top */
+    padding: 0.6em 0;
 }
 
 .navbar-section .container {
@@ -164,7 +163,7 @@ section {
 .navbar-section .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #fff; /* Light color for logo */
+    color: #fff;
 }
 
 .navbar-section .nav-links ul {
@@ -176,19 +175,19 @@ section {
 }
 
 .navbar-section .nav-links a {
-    color: #e0e0e0; /* Light grey for links */
+    color: #e0e0e0;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .navbar-section .nav-links a:hover,
 .navbar-section .nav-links a.active {
-    color: #63ccc5; /* Accent color for hover/active */
+    color: #63ccc5;
 }
 
 .navbar-section .nav-contact-btn {
     margin-left: 1.5em;
-    background-color: #35395c; /* Match hero pill bg */
+    background-color: #35395c;
     color: #fff;
     border: 2px solid #35395c;
 }
@@ -200,50 +199,48 @@ section {
 }
 
 .mobile-nav-toggle {
-    display: none; /* Hidden on desktop */
+    display: none;
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #fff; /* Light color for hamburger */
+    color: #fff;
     cursor: pointer;
 }
 
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
-    background: linear-gradient(to bottom, #01001f, #050e51); /* New gradient background */
-    padding: 60px 0; /* Adjust padding as needed, especially with centered content */
+    background: linear-gradient(to bottom, #01001f, #050e51);
+    padding: 60px 0;
     min-height: 90vh;
     display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    text-align: center; /* Center text within .hero-content */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
     overflow: hidden;
+    padding-bottom: 150px; /* Adjusted to match separator height for safety */
 }
 
 .hero-section.new-hero-design .container {
-    /* Container might not need flex properties if section itself handles centering */
-    width: 90%; /* Keep container constraints */
-    max-width: 800px; /* Max width for centered content block */
+    width: 90%;
+    max-width: 800px;
 }
 
 .hero-content {
-    /* flex: 1; Removed, as content is now centered by section */
-    /* max-width: 580px; Adjusted by container */
     z-index: 2;
 }
 
 .hero-pill-text {
-    display: inline-block; /* So it's only as wide as content + padding */
+    display: inline-block;
     background-color: #35395c;
     color: #fff;
-    padding: 0.6em 1.5em; /* Adjust padding */
-    border-radius: 50px; /* Pill shape */
+    padding: 0.6em 1.5em;
+    border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 25px; /* Space below the pill text, adjusted from 20px */
+    margin-bottom: 25px;
 }
 
 .hero-content .pre-header {
@@ -252,18 +249,18 @@ section {
     color: #63ccc5;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1em; /* Adjusted margin */
+    margin-bottom: 1em;
 }
 
 .hero-content h1 {
-    font-size: 2.8rem; /* Adjusted size for centered layout */
+    font-size: 2.8rem;
     font-weight: 700;
     color: #FFFFFF;
     line-height: 1.2;
     margin-bottom: 0.5em;
 }
 
-.hero-content h1 .highlight-purple { /* Will rename this class if it's no longer purple */
+.hero-content h1 .highlight-purple {
     color: #63ccc5;
 }
 
@@ -271,24 +268,20 @@ section {
     font-size: 1rem;
     color: #e0e0e0;
     line-height: 1.7;
-    margin-bottom: 1.5em; /* Adjusted margin */
-    max-width: 600px; /* Constrain paragraph width for better readability */
+    margin-bottom: 1.5em;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hero-buttons {
     display: flex;
-    justify-content: center; /* Center buttons since text-align:center on parent */
+    justify-content: center;
     gap: 1rem;
 }
 
-/* Styles for .hero-image-container, .hero-image-wrapper, .decorative-circles, plus symbols will be removed */
-/* as there's no image in the new design for hero section */
-
 /* Responsive adjustments for the new hero section */
 @media (max-width: 992px) {
-    /* .hero-section.new-hero-design .container can remain as is or adjust max-width if needed */
     .hero-content h1 {
         font-size: 2.4rem;
     }
@@ -296,8 +289,9 @@ section {
 
 @media (max-width: 768px) {
     .hero-section.new-hero-design {
-        padding: 40px 0; /* Reduced padding for mobile */
-        min-height: 80vh; /* Adjust min-height for mobile */
+        padding: 40px 0;
+        min-height: 80vh;
+        padding-bottom: 100px; /* Adjust for smaller separator */
     }
     .hero-content h1 {
         font-size: 2rem;
@@ -327,9 +321,10 @@ section {
     .hero-pill-text {
         font-size: 0.75rem;
     }
+    .hero-section.new-hero-design {
+        padding-bottom: 80px; /* Adjust for smaller separator */
+    }
 }
-
-/* REMOVING .scrolled styles as navbar is now consistently dark blue gradient */
 
 /* Hero Section Bottom Separator */
 .hero-bottom-separator {
@@ -337,73 +332,64 @@ section {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 150px; /* Approximate height, adjust as needed */
-    pointer-events: none; /* Allow clicks to pass through */
-    overflow: hidden; /* To help manage layers if they slightly exceed bounds */
+    height: 180px; /* Increased height for more pronounced effect */
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .separator-layer {
     position: absolute;
     width: 100%;
-    height: 100%; /* Layers will use clip-path within this height */
+    height: 100%;
     left: 0;
 }
 
-.hero-section.new-hero-design {
-    /* Ensure hero section can contain absolutely positioned children */
-    position: relative;
-    /* Add padding to bottom to make space for the separator */
-    padding-bottom: 150px; /* Adjusted to match separator height for safety */
-}
-
-
 /* Layer 1: Top Dark Blue/Purple Layer */
 .separator-layer.layer-1 {
-    background-color: #0A195E; /* Sampled color */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%); /* Angled cut, adjust % for angle */
+    background-color: #0A195E; /* Sampled color: Dark Blue/Purple */
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); /* Angled cut */
     z-index: 3;
-    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */ /* Subtle shadow */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
 }
 
 /* Layer 2: Middle Medium Blue Layer */
 .separator-layer.layer-2 {
-    background-color: #2E67F8; /* Sampled color */
-    clip-path: polygon(0% 30%, 100% 0%, 100% 80%, 0% 100%); /* Angled, offset from layer 1 */
-    /* clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%); /* Example */
+    background-color: #2E67F8; /* Sampled color: Medium Blue */
+    clip-path: polygon(0 45%, 100% 15%, 100% 85%, 0 100%);
     z-index: 2;
-    /* box-shadow: 0 5px 15px rgba(0,0,0,0.05); */
-    /* transform: translateY(10px); /* Push down slightly */
+    filter: drop-shadow(0 4px 5px rgba(0,0,0,0.1));
 }
 
 /* Layer 3: Bottom Teal/Cyan Layer */
 .separator-layer.layer-3 {
-    background-color: #32DBC2; /* Sampled color */
-    clip-path: polygon(0% 60%, 100% 30%, 100% 100%, 0% 100%); /* Angled, offset from layer 2 */
-    /* clip-path: polygon(0 60%, 100% 30%, 100% 100%, 0 100%); Example */
+    background-color: #32DBC2; /* Sampled color: Teal/Cyan */
+    clip-path: polygon(0 75%, 100% 45%, 100% 100%, 0 100%);
     z-index: 1;
-    /* transform: translateY(20px); Push down further */
 }
 
-/* Adjustments for rounded corners - this is tricky with clip-path.
-   For true rounded corners on clipped shapes, SVG is often better.
-   This is an approximation attempt or might need to be omitted if it doesn't look right. */
-.separator-layer {
-    /* If we want to try to fake rounded corners with CSS on the divs themselves before clipping */
-    /* border-bottom-right-radius: 20px; */ /* Example, apply to specific layers if needed */
-    /* border-top-left-radius: 20px;  */
+/* Responsive adjustments for separator */
+@media (max-width: 768px) {
+    .hero-bottom-separator {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-bottom-separator {
+        height: 100px;
+    }
 }
 
 /* Mobile nav active state */
-/* Ensures that when .nav-links gets .active, it's displayed */
 @media (max-width: 768px) {
-    .navbar-section .nav-links.active { /* This is for the new mobile nav */
+    .navbar-section .nav-links.active {
         display: flex !important;
-        background-color: #050e51; /* Ensure mobile nav dropdown has dark bg */
+        background-color: #050e51;
     }
-     .navbar-section .nav-links { /* Mobile nav specific styles */
-        background-color: #050e51; /* Dark background for mobile dropdown */
+     .navbar-section .nav-links {
+        background-color: #050e51;
      }
-     .navbar-section .nav-links a { /* Ensure mobile links are light */
+     .navbar-section .nav-links a {
         color: #e0e0e0;
      }
      .navbar-section .nav-links a:hover {
@@ -642,25 +628,26 @@ section {
     h1 { font-size: 2.4rem; }
     h2 { font-size: 1.9rem; }
 
-    .hero-section .container {
+    /* Original hero responsive, might need removal if hero content itself is simple enough */
+    /* .hero-section .container {
         flex-direction: column;
         text-align: center;
-    }
-    .hero-content {
+    } */
+    /* .hero-content {
         max-width: 100%;
         margin-bottom: 2rem;
-    }
-    .hero-image {
-        max-width: 400px; /* Or 80% width */
+    } */
+    /* .hero-image {
+        max-width: 400px;
         margin: 0 auto;
-    }
+    } */
 
     .about-us-section .container {
         flex-direction: column;
     }
     .about-us-image {
         margin-bottom: 2rem;
-        order: -1; /* Image first on mobile if desired */
+        order: -1;
          max-width: 400px;
          margin-left: auto;
          margin-right: auto;
@@ -676,20 +663,18 @@ section {
 
 @media (max-width: 768px) {
     .navbar-section .nav-links {
-        display: none; /* Hide desktop nav */
+        display: none;
         position: absolute;
-        top: 100%; /* Position below header */
+        top: 100%;
         left: 0;
         right: 0;
-        background-color: #fff;
+        /* background-color: #fff; Removed, handled by .active specific style */
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         flex-direction: column;
         padding: 1em 0;
     }
 
-    .navbar-section .nav-links.active { /* Class toggled by JS */
-        display: flex;
-    }
+    /* .navbar-section .nav-links.active is defined lower down with other mobile nav styles */
 
     .navbar-section .nav-links li {
         margin: 0;
@@ -698,22 +683,22 @@ section {
     .navbar-section .nav-links a {
         display: block;
         padding: 0.8em 1em;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0; /* Might need adjustment for dark bg */
     }
     .navbar-section .nav-links li:last-child a {
         border-bottom: none;
     }
 
     .mobile-nav-toggle {
-        display: block; /* Show hamburger */
+        display: block;
     }
 
     .navbar-section .nav-contact-btn {
-        display: none; /* Optionally hide on mobile nav, or move into mobile menu */
+        display: none;
     }
 
     .services-grid {
-        grid-template-columns: 1fr; /* Stack cards */
+        grid-template-columns: 1fr;
     }
     .portfolio-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -734,7 +719,7 @@ section {
     body {
         font-size: 15px;
     }
-    h1 { font-size: 2rem; }
+    h1 { font-size: 2rem; } /* Adjusted h1 for hero, this might be too general */
     h2 { font-size: 1.7rem; }
     .container {
         width: 95%;
@@ -743,21 +728,21 @@ section {
         padding: 0.7em 1.5em;
         font-size: 0.9rem;
     }
-    .hero-section {
+    /* .hero-section {
         padding: 60px 0;
         min-height: auto;
-    }
-    section {
+    } */ /* Covered by more specific hero styles */
+    section:not(.hero-section) { /* Ensure other sections keep their padding */
         padding: 60px 0;
     }
     .portfolio-grid {
-        grid-template-columns: 1fr; /* Stack portfolio items */
+        grid-template-columns: 1fr;
     }
     .portfolio-item img {
         height: 220px;
     }
     .testimonials-slider {
-         grid-template-columns: 1fr; /* Stack testimonials */
+         grid-template-columns: 1fr;
     }
 }
 
