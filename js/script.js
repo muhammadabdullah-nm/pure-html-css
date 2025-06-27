@@ -13,17 +13,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar-section');
-if (navbar) { // Check if navbar exists
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Add 'scrolled' class after 50px scroll
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-}
+// REMOVED Navbar scroll effect as navbar is now consistently dark
 
 // New Mobile Menu Toggle
 const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
