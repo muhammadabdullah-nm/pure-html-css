@@ -337,7 +337,7 @@ section {
 
 .hero-content h1 {
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 600; /* Reduced font weight for elegance */
     color: #FFFFFF;
     line-height: 1.2;
     margin-bottom: 0.5em;
@@ -345,13 +345,13 @@ section {
 }
 
 .hero-content h1 .highlight-text,
-#typing-effect { /* Style for the typing span */
+#typing-effect {
     color: #63ccc5;
 }
 
 .typing-cursor {
     color: #63ccc5;
-    font-weight: bold; /* Make cursor more visible */
+    font-weight: 600; /* Match new h1 weight */
     animation: blinkCursor 0.7s infinite;
 }
 
