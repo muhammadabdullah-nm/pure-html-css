@@ -243,11 +243,11 @@ section {
 /* Hero Section - New Design */
 .hero-section.new-hero-design {
     background: linear-gradient(to bottom, #01001f, #050e51);
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 80px;
     min-height: 95vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     position: relative;
@@ -341,10 +341,23 @@ section {
     color: #FFFFFF;
     line-height: 1.2;
     margin-bottom: 0.5em;
+    min-height: 2.4em;
 }
 
-.hero-content h1 .highlight-text {
+.hero-content h1 .highlight-text,
+#typing-effect { /* Style for the typing span */
     color: #63ccc5;
+}
+
+.typing-cursor {
+    color: #63ccc5;
+    font-weight: bold; /* Make cursor more visible */
+    animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .hero-content p.description {
@@ -396,12 +409,13 @@ section {
 
 @media (max-width: 768px) {
     .hero-section.new-hero-design {
-        padding-top: 60px;
+        padding-top: 100px;
         min-height: 85vh;
         padding-bottom: 60px;
     }
     .hero-content h1 {
         font-size: 2rem;
+        min-height: 2.4em;
     }
     .hero-content p.description {
         font-size: 0.9rem;
@@ -429,6 +443,7 @@ section {
         font-size: 0.75rem;
     }
     .hero-section.new-hero-design {
+        padding-top: 80px;
         padding-bottom: 40px;
     }
 }
