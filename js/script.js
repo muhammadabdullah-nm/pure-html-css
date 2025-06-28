@@ -13,6 +13,57 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// Typing Effect for Hero Section
+const typingElement = document.getElementById('typing-effect');
+const typingCursor = document.querySelector('.typing-cursor');
+const wordsToType = ["CREATIVE", "INNOVATIVE", "ROBUST", "OPTIMIZED"];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 150; // milliseconds
+const deletingSpeed = 100; // milliseconds
+const pauseBetweenWords = 1500; // milliseconds
+
+function typeEffect() {
+    const currentWord = wordsToType[wordIndex];
+    let displayText = '';
+
+    if (isDeleting) {
+        // Deleting
+        displayText = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        // Typing
+        displayText = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    if (typingElement) {
+        typingElement.textContent = displayText;
+    }
+
+    let timeToNextChar = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        // Word fully typed
+        timeToNextChar = pauseBetweenWords;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        // Word fully deleted
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % wordsToType.length; // Move to next word, loop
+        timeToNextChar = typingSpeed; // Speed up start of next word slightly
+    }
+
+    setTimeout(typeEffect, timeToNextChar);
+}
+
+// Start typing effect if the element exists
+if (typingElement) {
+    setTimeout(typeEffect, typingSpeed); // Initial call
+}
+
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar-section');
 if (navbar) { // Check if navbar exists
