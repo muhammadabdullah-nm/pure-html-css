@@ -1,3 +1,4 @@
+// Accordion script from original file (if still needed for other pages/parts)
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -11,57 +12,6 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
-}
-
-// Typing Effect for Hero Section
-const typingElement = document.getElementById('typing-effect');
-const typingCursor = document.querySelector('.typing-cursor');
-const wordsToType = ["CREATIVE", "INNOVATIVE", "ROBUST", "OPTIMIZED"];
-
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingSpeed = 150; // milliseconds
-const deletingSpeed = 100; // milliseconds
-const pauseBetweenWords = 1500; // milliseconds
-
-function typeEffect() {
-    const currentWord = wordsToType[wordIndex];
-    let displayText = '';
-
-    if (isDeleting) {
-        // Deleting
-        displayText = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        // Typing
-        displayText = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    if (typingElement) {
-        typingElement.textContent = displayText;
-    }
-
-    let timeToNextChar = isDeleting ? deletingSpeed : typingSpeed;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        // Word fully typed
-        timeToNextChar = pauseBetweenWords;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        // Word fully deleted
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % wordsToType.length; // Move to next word, loop
-        timeToNextChar = typingSpeed; // Speed up start of next word slightly
-    }
-
-    setTimeout(typeEffect, timeToNextChar);
-}
-
-// Start typing effect if the element exists
-if (typingElement) {
-    setTimeout(typeEffect, typingSpeed); // Initial call
 }
 
 // Navbar scroll effect
@@ -78,15 +28,13 @@ if (navbar) { // Check if navbar exists
 
 // New Mobile Menu Toggle
 const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const mainNav = document.getElementById('main-nav');
+const mainNav = document.getElementById('main-nav'); // Make sure 'main-nav' is the ID of your nav ul/div
 
 if (mobileNavToggle && mainNav) { // Check if elements exist
     mobileNavToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active'); // Toggle .active class on the nav links container
-        // Optional: Toggle ARIA attribute for accessibility
         const isExpanded = mainNav.classList.contains('active');
         mobileNavToggle.setAttribute('aria-expanded', isExpanded);
-        // Optional: Change hamburger icon to X and back
         const icon = mobileNavToggle.querySelector('i');
         if (isExpanded) {
             icon.classList.remove('fa-bars');
@@ -98,55 +46,49 @@ if (mobileNavToggle && mainNav) { // Check if elements exist
     });
 }
 
-// REMOVED Navbar scroll effect as navbar is now consistently dark
+// Typing Effect for Hero Section
+const typingElement = document.getElementById('typing-effect');
+// const typingCursor = document.querySelector('.typing-cursor'); // Cursor is part of HTML now, styled with CSS
 
-// New Mobile Menu Toggle
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const mainNav = document.getElementById('main-nav');
+const wordsToType = ["CREATIVE", "INNOVATIVE", "ROBUST", "OPTIMIZED"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 150;
+const deletingSpeed = 100;
+const pauseBetweenWords = 1500;
 
-if (mobileNavToggle && mainNav) { // Check if elements exist
-    mobileNavToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('active'); // Toggle .active class on the nav links container
-        // Optional: Toggle ARIA attribute for accessibility
-        const isExpanded = mainNav.classList.contains('active');
-        mobileNavToggle.setAttribute('aria-expanded', isExpanded);
-        // Optional: Change hamburger icon to X and back
-        const icon = mobileNavToggle.querySelector('i');
-        if (isExpanded) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-}
+function typeEffect() {
+    if (!typingElement) return; // Exit if element doesn't exist
 
+    const currentWord = wordsToType[wordIndex];
+    let displayText = '';
 
-function openMenu(){
-  document.getElementById("topbarMenu").style.left = "0px"
-}
-
-function closeMenu(){
-  document.getElementById("topbarMenu").style.left = "-280px"
-}
-
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+    if (isDeleting) {
+        displayText = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        displayText = currentWord.substring(0, charIndex + 1);
+        charIndex++;
     }
-  }
+
+    typingElement.textContent = displayText;
+
+    let timeToNextChar = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        timeToNextChar = pauseBetweenWords;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % wordsToType.length;
+        timeToNextChar = typingSpeed;
+    }
+
+    setTimeout(typeEffect, timeToNextChar);
 }
 
+// Start typing effect if the element exists on the page
+if (typingElement) {
+    setTimeout(typeEffect, typingSpeed);
+}
